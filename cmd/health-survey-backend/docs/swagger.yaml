@@ -1,0 +1,52 @@
+basePath: /api/v1
+definitions:
+  models.User:
+    properties:
+      address:
+        type: string
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: integer
+      last_name:
+        type: string
+      updated_at:
+        type: string
+    type: object
+info:
+  contact:
+    email: jhrobert@pm.me
+    name: API Support
+  description: Swagger API for Health Survey Backend.
+  license:
+    name: MIT
+    url: https://github.com/rjrobert/health-survey-backend/blob/master/LICENSE
+  termsOfService: http://swagger.io/terms/
+  title: Health Survey Backend Swagger API
+  version: "1.0"
+paths:
+  /users/{id}:
+    get:
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      security:
+      - ApiKeyAuth: []
+      summary: Retrieves user based on given ID
+swagger: "2.0"

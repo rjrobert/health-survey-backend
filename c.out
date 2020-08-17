@@ -1,0 +1,8 @@
+mode: set
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/services/user.go:14.47,16.2 1 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/services/user.go:19.58,21.2 1 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/daos/user.go:12.28,14.2 1 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/daos/user.go:17.56,24.2 3 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/apis/user.go:20.30,23.46 3 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/apis/user.go:23.46,26.3 2 1
+github.com/rjrobert/go-project-blueprint/cmd/blueprint/apis/user.go:26.8,28.3 1 1

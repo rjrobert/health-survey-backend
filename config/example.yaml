@@ -1,0 +1,5 @@
+ConfigVar: "Dummy Value"
+
+blueprint:
+  DSN: ""
+  API_Key: ""

@@ -79,6 +79,8 @@ $(OUTBIN): .go/$(OUTBIN).stamp
 # This will build the binary under ./.go and update the real binary if needed.
 .PHONY: .go/$(OUTBIN).stamp
 .go/$(OUTBIN).stamp: $(BUILD_DIRS)
+	@echo "generating swagger docs"
+	@cd cmd/health-survey-backend;swag init;cd ../..
 	@echo "making $(OUTBIN)"
 	@docker run                                                 \
 	    -i                                                      \

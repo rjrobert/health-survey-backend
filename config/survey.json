@@ -1,0 +1,441 @@
+{
+    "title": "36-Item Short Form Survey (SF-36)",
+    "pages": [
+     {
+      "name": "Questionnaire",
+      "elements": [
+       {
+        "type": "radiogroup",
+        "name": "q1",
+        "title": "In general, would you say your health is:",
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - Execllent"
+         },
+         {
+          "value": "2",
+          "text": "2 - Very good"
+         },
+         {
+          "value": "3",
+          "text": "3 - Good"
+         },
+         {
+          "value": "4",
+          "text": "4 - Fair"
+         },
+         {
+          "value": "5",
+          "text": "5 - Poor"
+         }
+        ]
+       },
+       {
+        "type": "radiogroup",
+        "name": "q2",
+        "title": "Compared to one year ago, how would you rate your health in general now?",
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - Much better now than one year ago"
+         },
+         {
+          "value": "2",
+          "text": "2 - Somewhat better now than one year ago"
+         },
+         {
+          "value": "3",
+          "text": "3 - About the same"
+         },
+         {
+          "value": "4",
+          "text": "4 - Somewhat worse now than one year ago"
+         },
+         {
+          "value": "5",
+          "text": "5 - Much worse now than one year ago"
+         }
+        ]
+       },
+       {
+        "type": "matrix",
+        "name": "q3-title",
+        "title": "The following items are about activities you might do during a typical day. Does your health now limit you in these activities? If so, how much?",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         {
+          "value": "1",
+          "text": "Yes, limited a lot"
+         },
+         {
+          "value": "2",
+          "text": "Yes, limited a little"
+         },
+         {
+          "value": "3",
+          "text": "No, not limited at all"
+         }
+        ],
+        "rows": [
+         {
+          "value": "q3",
+          "text": "3. Vigorous activities, such as running, lifting heavy objects, participating in strenuous sports"
+         },
+         {
+          "value": "q4",
+          "text": "4. Moderate activities, such as moving a table, pushing a vacuum cleaner, bowling, or playing golf"
+         },
+         {
+          "value": "q5",
+          "text": "5. Lifting or carrying groceries"
+         },
+         {
+          "value": "q6",
+          "text": "6. Climbing several flights of stairs"
+         },
+         {
+          "value": "q7",
+          "text": "7. Climbing one flight of stairs"
+         },
+         {
+          "value": "q8",
+          "text": "8. Bending, kneeling, or stooping"
+         },
+         {
+          "value": "q9",
+          "text": "9. Walking more than a mile"
+         },
+         {
+          "value": "q10",
+          "text": "10. Walking several blocks"
+         },
+         {
+          "value": "q11",
+          "text": "11. Walking one block"
+         },
+         {
+          "value": "q12",
+          "text": "12. Bathing or dressing yourself"
+         }
+        ],
+        "isAllRowRequired": true
+       },
+       {
+        "type": "matrix",
+        "name": "q4-title",
+        "title": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of your physical health?",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         {
+          "value": "1",
+          "text": "Yes"
+         },
+         {
+          "value": "2",
+          "text": "No"
+         }
+        ],
+        "rows": [
+         {
+          "value": "q13",
+          "text": "13. Cut down the amount of time you spent on work or other activities"
+         },
+         {
+          "value": "q14",
+          "text": "14. Accomplished less than you would like"
+         },
+         {
+          "value": "q15",
+          "text": "15. Were limited in the kind of work or other activities"
+         },
+         {
+          "value": "q16",
+          "text": "16. Had difficulty performing the work or other activities (for example, it took extra effort)"
+         }
+        ],
+        "isAllRowRequired": true
+       },
+       {
+        "type": "matrix",
+        "name": "q5-title",
+        "title": "During the past 4 weeks, have you had any of the following problems with your work or other regular daily activities as a result of any emotional problems (such as feeling depressed or anxious)?",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         {
+          "value": "1",
+          "text": "Yes"
+         },
+         {
+          "value": "2",
+          "text": "No"
+         }
+        ],
+        "rows": [
+         {
+          "value": "q17",
+          "text": "17. Cut down the amount of time you spent on work or other activities"
+         },
+         {
+          "value": "q18",
+          "text": "18. Accomplished less than you would like"
+         },
+         {
+          "value": "q19",
+          "text": "19. Didn't do work or other activities as carefully as usual"
+         }
+        ],
+        "isAllRowRequired": true
+       },
+       {
+        "type": "radiogroup",
+        "name": "q20",
+        "title": "20. During the past 4 weeks, to what extent has your physical health or emotional problems interfered with your normal social activities with family, friends, neighbors, or groups?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - Not at all"
+         },
+         {
+          "value": "2",
+          "text": "2 - Slightly"
+         },
+         {
+          "value": "3",
+          "text": "3 - Moderately"
+         },
+         {
+          "value": "4",
+          "text": "4 - Quite a bit"
+         },
+         {
+          "value": "5",
+          "text": "5 - Extremely"
+         }
+        ]
+       },
+       {
+        "type": "radiogroup",
+        "name": "q21",
+        "title": "21. How much bodily pain have you had during the past 4 weeks?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - None"
+         },
+         {
+          "value": "2",
+          "text": "2 - Very Mild"
+         },
+         {
+          "value": "3",
+          "text": "3 - Mild"
+         },
+         {
+          "value": "4",
+          "text": "4 - Moderate"
+         },
+         {
+          "value": "5",
+          "text": "5 - Severe"
+         },
+         {
+          "value": "6",
+          "text": "6 - Very severe"
+         }
+        ]
+       },
+       {
+        "type": "radiogroup",
+        "name": "q22",
+        "title": "22. During the past 4 weeks, how much did pain interfere with your normal work (including both work outside the home and housework)?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - Not at all"
+         },
+         {
+          "value": "2",
+          "text": "2 - A little bit"
+         },
+         {
+          "value": "3",
+          "text": "3 - Moderately"
+         },
+         {
+          "value": "4",
+          "text": "4 - Quite a bit"
+         },
+         {
+          "value": "5",
+          "text": "5 - Extremely"
+         }
+        ]
+       },
+       {
+        "type": "matrix",
+        "name": "q23-title",
+        "title": "These questions are about how you feel and how things have been with you during the past 4 weeks. For each question, please give the one answer that comes closest to the way you have been feeling.",
+        "description": "How much of the time during the past 4 weeks...",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         {
+          "value": "1",
+          "text": "All of the time"
+         },
+         {
+          "value": "2",
+          "text": "Most of the time"
+         },
+         {
+          "value": "3",
+          "text": "A good bit of the time"
+         },
+         {
+          "value": "4",
+          "text": "Some of the time"
+         },
+         {
+          "value": "5",
+          "text": "A little of the time"
+         },
+         {
+          "value": "6",
+          "text": "None of the time"
+         }
+        ],
+        "rows": [
+         {
+          "value": "q23",
+          "text": "23. Did you feel full of pep?"
+         },
+         {
+          "value": "q24",
+          "text": "24. Have you been a very nervous person?"
+         },
+         {
+          "value": "q25",
+          "text": "25. Have you felt so down in the dumps that nothing could cheer you up?"
+         },
+         {
+          "value": "q26",
+          "text": "26. Have you felt calm and peaceful?"
+         },
+         {
+          "value": "q27",
+          "text": "27. Did you have a lot of energy?"
+         },
+         {
+          "value": "q28",
+          "text": "28. Have you felt downhearted and blue?"
+         },
+         {
+          "value": "q29",
+          "text": "29. Did you feel worn out?"
+         },
+         {
+          "value": "q30",
+          "text": "30. Have you been a happy person?"
+         },
+         {
+          "value": "q31",
+          "text": "31. Did you feel tired?"
+         }
+        ],
+        "isAllRowRequired": true
+       },
+       {
+        "type": "radiogroup",
+        "name": "q32",
+        "title": "32. During the past 4 weeks, how much of the time has your physical health or emotional problems interfered with your social activities (like visiting with friends, relatives, etc.)?",
+        "hideNumber": true,
+        "isRequired": true,
+        "choices": [
+         {
+          "value": "1",
+          "text": "1 - All of the time"
+         },
+         {
+          "value": "2",
+          "text": "2 - Most of the time"
+         },
+         {
+          "value": "3",
+          "text": "3 - Some of the time"
+         },
+         {
+          "value": "4",
+          "text": "4 - A little of the time"
+         },
+         {
+          "value": "5",
+          "text": "5 - None of the time"
+         }
+        ]
+       },
+       {
+        "type": "matrix",
+        "name": "q33-title",
+        "title": "How TRUE or FALSE is each of the following statements for you.",
+        "hideNumber": true,
+        "isRequired": true,
+        "columns": [
+         {
+          "value": "1",
+          "text": "Definitely true"
+         },
+         {
+          "value": "2",
+          "text": "Mostly true"
+         },
+         {
+          "value": "3",
+          "text": "Don't know"
+         },
+         {
+          "value": "4",
+          "text": "Mostly false"
+         },
+         {
+          "value": "5",
+          "text": "Definitely false"
+         }
+        ],
+        "rows": [
+         {
+          "value": "q33",
+          "text": "33. I seem to get sick a little easier than other people"
+         },
+         {
+          "value": "q34",
+          "text": "34. I am as healthy as anybody I know"
+         },
+         {
+          "value": "q35",
+          "text": "35. I expect my health to get worse"
+         },
+         {
+          "value": "q36",
+          "text": "36. My health is excellent"
+         }
+        ],
+        "isAllRowRequired": true
+       }
+      ]
+     }
+    ],
+    "showCompletedPage": false,
+    "navigateToUrl": "asdf"
+   }

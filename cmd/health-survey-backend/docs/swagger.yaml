@@ -1,5 +1,135 @@
 basePath: /api/v1
 definitions:
+  models.Choice:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      elementID:
+        type: integer
+      id:
+        type: integer
+      text:
+        type: string
+      updated_at:
+        type: string
+      value:
+        type: string
+    type: object
+  models.Column:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      elementID:
+        type: integer
+      id:
+        type: integer
+      text:
+        type: string
+      updated_at:
+        type: string
+      value:
+        type: string
+    type: object
+  models.Element:
+    properties:
+      choices:
+        items:
+          $ref: '#/definitions/models.Choice'
+        type: array
+      columns:
+        items:
+          $ref: '#/definitions/models.Column'
+        type: array
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      description:
+        type: string
+      hideNumber:
+        type: boolean
+      id:
+        type: integer
+      isAllRowRequired:
+        type: boolean
+      isRequired:
+        type: boolean
+      name:
+        type: string
+      page_id:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/models.Row'
+        type: array
+      title:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  models.Page:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      elements:
+        items:
+          $ref: '#/definitions/models.Element'
+        type: array
+      id:
+        type: integer
+      name:
+        type: string
+      survey_id:
+        type: integer
+      updated_at:
+        type: string
+    type: object
+  models.Row:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      elementID:
+        type: integer
+      id:
+        type: integer
+      text:
+        type: string
+      updated_at:
+        type: string
+      value:
+        type: string
+    type: object
+  models.Survey:
+    properties:
+      created_at:
+        type: string
+      deleted_at:
+        type: string
+      id:
+        type: integer
+      navigate_to_url:
+        type: string
+      pages:
+        items:
+          $ref: '#/definitions/models.Page'
+        type: array
+      show_completed_page:
+        type: boolean
+      title:
+        type: string
+      updated_at:
+        type: string
+    type: object
   models.User:
     properties:
       address:
@@ -31,6 +161,24 @@ info:
   title: Health Survey Backend Swagger API
   version: "1.0"
 paths:
+  /surveys/{id}:
+    get:
+      parameters:
+      - description: Survey ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Survey'
+      security:
+      - ApiKeyAuth: []
+      summary: Retrieves survey based on given ID
   /users/{id}:
     get:
       parameters:
@@ -49,4 +197,9 @@ paths:
       security:
       - ApiKeyAuth: []
       summary: Retrieves user based on given ID
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
 swagger: "2.0"

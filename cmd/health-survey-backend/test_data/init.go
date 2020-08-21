@@ -31,7 +31,21 @@ func init() {
 // ResetDB Resets testing database - deletes all tables, creates new ones using GORM migration and populates them using `db.sql` file
 func ResetDB() *gorm.DB {
 	config.Config.DB.DropTableIfExists(&models.User{}) // Note: Order matters
+	config.Config.DB.DropTableIfExists(&models.Survey{})
+	config.Config.DB.DropTableIfExists(&models.Page{})
+	config.Config.DB.DropTableIfExists(&models.Element{})
+	config.Config.DB.DropTableIfExists(&models.Choice{})
+	config.Config.DB.DropTableIfExists(&models.Column{})
+	config.Config.DB.DropTableIfExists(&models.Row{})
+
 	config.Config.DB.AutoMigrate(&models.User{})
+	config.Config.DB.AutoMigrate(&models.Survey{})
+	config.Config.DB.AutoMigrate(&models.Page{})
+	config.Config.DB.AutoMigrate(&models.Element{})
+	config.Config.DB.AutoMigrate(&models.Choice{})
+	config.Config.DB.AutoMigrate(&models.Column{})
+	config.Config.DB.AutoMigrate(&models.Row{})
+
 	if err := runSQLFile(config.Config.DB, getSQLFile()); err != nil {
 		panic(fmt.Errorf("error while initializing test database: %s", err))
 	}

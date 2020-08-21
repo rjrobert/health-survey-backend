@@ -29,6 +29,10 @@ import (
 // @license.url https://github.com/rjrobert/health-survey-backend/blob/master/LICENSE
 
 // @BasePath /api/v1
+
+// @securityDefinitions.apikey ApiKeyAuth
+// @in header
+// @name Authorization
 func main() {
 	// load application configurations
 	if err := config.LoadConfig("./config"); err != nil {
@@ -50,8 +54,16 @@ func main() {
 
 	v1 := r.Group("/api/v1")
 	{
-		v1.Use(middlewares.CheckJWT())
-		v1.GET("/users/:id", apis.GetUser)
+		v1.Use(middlewares.APIKeyAuth())
+		users := v1.Group("/users")
+		{
+			users.GET(":id", apis.GetUser)
+		}
+
+		surveys := v1.Group("/surveys")
+		{
+			surveys.GET(":id", apis.GetSurveys)
+		}
 	}
 
 	config.Config.DB, config.Config.DBErr = gorm.Open("postgres", config.Config.DSN)
@@ -59,11 +71,32 @@ func main() {
 		panic(config.Config.DBErr)
 	}
 
-	config.Config.DB.AutoMigrate(&models.User{}) // This is needed for generation of schema for postgres image.
+	setupDatabase()
 
 	defer config.Config.DB.Close()
 
 	log.Println("Successfully connected to database")
 
 	r.Run(fmt.Sprintf(":%v", config.Config.ServerPort))
+}
+
+func setupDatabase() {
+	// config.Config.DB.DropTableIfExists(&models.Survey{})
+	// config.Config.DB.DropTableIfExists(&models.Page{})
+	// config.Config.DB.DropTableIfExists(&models.Element{})
+	// config.Config.DB.DropTableIfExists(&models.Choice{})
+	// config.Config.DB.DropTableIfExists(&models.Column{})
+	// config.Config.DB.DropTableIfExists(&models.Row{})
+
+	// This is needed for generation of schema for postgres image.
+	config.Config.DB.AutoMigrate(&models.User{})
+	config.Config.DB.AutoMigrate(&models.Survey{})
+	config.Config.DB.AutoMigrate(&models.Page{})
+	config.Config.DB.AutoMigrate(&models.Element{})
+	config.Config.DB.AutoMigrate(&models.Choice{})
+	config.Config.DB.AutoMigrate(&models.Column{})
+	config.Config.DB.AutoMigrate(&models.Row{})
+
+	// Create Survey data in db if it doesn't already exist
+	// daos.PreloadSurveyData()
 }
